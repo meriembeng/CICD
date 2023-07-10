@@ -27,7 +27,7 @@ jobs:
           
     - name: Create Tag in repository
       if: ${{ success() && steps.sncicd-publish-app.outputs.newVersion }}
-      uses: tvdias/github-tagger@v0.0.2
+      uses: tvdias/github-tagger@v0.0.1
       with:
         repo-token: ${{ github.token }}
         tag: "${{ steps.sncicd-publish-app.outputs.newVersion }}"
