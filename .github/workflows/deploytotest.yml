@@ -30,7 +30,7 @@ jobs:
       uses: tvdias/github-tagger@v0.0.2
       with:
         repo-token: ${{ github.token }}
-        #tag: "${{ steps.sncicd-publish-app.outputs.newVersion }}"
+        tag: "2.0.0"
 
     - name: Install to PROD
       if: ${{ success() && steps.sncicd-publish-app.outputs.newVersion }}
