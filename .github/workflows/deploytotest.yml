@@ -26,11 +26,11 @@ jobs:
         appSysID: ${{ secrets.APP_SYS_ID }}
           
     - name: Create Tag in repository
-      if: ${{ success() && steps.sncicd-publish-app.outputs.newVersion }}
+      if: ${{ success()  }}
       uses: tvdias/github-tagger@v0.0.2
       with:
         repo-token: ${{ github.token }}
-        tag: "2.0.0"
+        #tag: "2.0.0"
 
     - name: Install to PROD
       if: ${{ success() && steps.sncicd-publish-app.outputs.newVersion }}
